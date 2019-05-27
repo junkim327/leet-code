@@ -3,11 +3,15 @@ package com.company.algorithms.easy;
 import java.util.Stack;
 
 public class MinStack {
-  private Stack<Integer> stack = new Stack<>();
+  private Stack<Integer> stack;
   private int min = Integer.MAX_VALUE;
 
+  public MinStack() {
+    stack = new Stack<>();
+  }
+
   public void push(int x) {
-    if (x < min) {
+    if (x <= min) {
       stack.push(min);
       min = x;
     }
